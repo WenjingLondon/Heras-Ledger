@@ -1,5 +1,5 @@
 
-👸 Hera's Ledger
+👸 Hera's Ledger 
 
 Privacy-preserving payment infrastructure for financial sovereignty.
 
@@ -43,27 +43,28 @@ As a female-led project, Hera’s Ledger is built as a Public Good. We believe t
 🛠 Installation & Setup 
 To run the Hera’s Ledger ZK-proof generation locally, follow these steps:
 1. Clone and Install Dependencies
-
+***
 git clone https://github.com/WenjingLondon/Heras-Ledger.git 
 cd Heras-Ledger 
 npm install
-
+***
 2. Prepare the Build Environment Since the build artifacts and large cryptographic files are excluded from this repository for efficiency, you must set up the local directory structure:
 Create the build folder:
-
+***
 mkdir build 
 * Powers of Tau (PTAU): The script expects a pot12_final.ptau file located in the build/ directory. You can download it from the Hermez trusted setup or provide your own.
 * Place the file here: build/pot12_final.ptau
-
+***
 3. Generate the ZK Proof Once the environment is prepared, run the automated shell script to compile the circuit, generate the witness, and verify the proof:
-
+***
 chmod +x build_proof.sh 
 ./build_proof.sh
-
+***
 4. Run the Local Server To interact with the demo via the web interface:
-
+***
 node server.js 
 Then open your browser at http://localhost:5000.
+***
 
 📜 License 
 This project is licensed under the MIT License—feel free to use, modify, and build upon this work to foster a more private and equitable Web3.
