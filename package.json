@@ -1,0 +1,26 @@
+{
+  "name": "privacy-demo-v3",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gen-input": "node scripts/generate_input.js",
+    "zk-run": "bash run_full_zk.sh",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@noble/secp256k1": "^3.0.0",
+    "circomlib": "^2.0.5",
+    "circomlibjs": "^0.1.7",
+    "cors": "^2.8.6",
+    "dotenv": "^17.2.4",
+    "ethers": "^6.16.0",
+    "express": "^5.2.1",
+    "poseidon-lite": "^0.3.0",
+    "snarkjs": "^0.7.6"
+  }
+}

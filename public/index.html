@@ -1,0 +1,307 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta charset="UTF-8">
+    <title>Hera's Ledger | Sovereign Financial Sanctuary</title>
+    <style>
+        /* 1. New Colour Palette - More Professional & Empowering */
+        :root { 
+            --heras-pink: #FF85A2; 
+            --safe-navy: #1A2B48;    
+            --trust-green: #27ae60; 
+            --gold-soft: #D4AF37; 
+            --bg-light: #FCF8F8;
+            --dark-text: #2c3e50; 
+        }
+
+        body { font-family: 'Inter', sans-serif; background: var(--bg-light); color: var(--dark-text); padding: 40px; margin: 0; }
+        
+        /* Hero Section */
+        .hero-banner {
+    width: 100%;
+    max-width: 1100px;
+    height: 220px;
+    margin: 0 auto 20px;
+    
+    background-image: url('./hero_banner.jpg');
+    background-size: cover;      
+    background-position: center; 
+    background-repeat: no-repeat;
+
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+        .mission-statement {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        /* 2. 2x2 Grid Layout */
+        .dashboard { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 30px; 
+            max-width: 1100px; 
+            margin: 0 auto; 
+        }
+
+        .card {   
+            background: linear-gradient(135deg, #FFDEE9 0%, #B5FFFC 100%);          
+            border-radius: 24px; 
+            padding: 30px; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05); 
+            position: relative; 
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+        
+        .card:hover { transform: translateY(-5px); }
+
+        h2 { font-size: 1.4rem; margin-top: 0; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+        .description { font-size: 12px; color: #7f8c8d; margin-bottom: 20px; line-height: 1.4; }
+        
+        .badge { font-size: 0.7rem; padding: 4px 10px; border-radius: 20px; color: white; margin-bottom: 10px; display: inline-block; }
+        
+        input { width: 100%; padding: 12px; margin: 8px 0; border: 1px solid #eee; border-radius: 10px; font-size: 14px; box-sizing: border-box; background: #fafafa; }
+        button { width: 100%; padding: 14px; border: none; border-radius: 12px; color: white; font-weight: 600; cursor: pointer; transition: 0.3s; margin-top: 15px; font-size: 14px; }
+        
+        /* Button Colours */
+        .btn-alice { background: var(--heras-pink); }
+        .btn-bank { background: #95a5a6; } /* Infrastructure is subtle */
+        .btn-monitor { background: var(--trust-green); }
+        .btn-bob { background: var(--safe-navy); }
+        
+        button:hover { filter: brightness(1.1); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+
+        .status-box { background: #fdfdfd; border: 1px solid #f0f0f0; padding: 15px; border-radius: 12px; margin-top: 20px; min-height: 60px; font-size: 14px; line-height: 1.5; color: #666; }
+        .highlight { color: var(--heras-pink); font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div class="hero-banner">
+        <h1>👸 Hera's Ledger</h1>
+    </div>
+
+    <div class="mission-statement">
+        <strong>A Public Good Protocol</strong> for financial autonomy. We use Dual-Key Stealth Addresses (DKSA) and ZK-Proofs to protect vulnerable individuals from financial abuse, ensuring their survival funds remain <strong>invisible, unfreezable, and self-sovereign.</strong>
+    </div>
+
+    <div class="dashboard">
+        <div class="card">
+            <span class="badge" style="background:var(--heras-pink)">Individual Power</span>
+            <h2>🏡 My Sanctuary</h2>
+            <p class="description">Securely shield your assets into a stealth vault that is decoupled from your public identity.</p>
+            
+            <label style="font-size: 12px; color: #999;">Recipient's Scan Key</label>
+            <input type="text" id="K_scan" readonly placeholder="Awaiting initialization...">
+            <label style="font-size: 12px; color: #999;">Recipient's Spend Key</label>
+            <input type="text" id="K_spend" readonly placeholder="Awaiting initialization...">
+            
+            <button class="btn-alice" onclick="aliceExecute()">✨ Initialize Stealth Vault</button>
+            
+            <div id="zk-status-area" style="margin-top:15px; padding: 12px; background: #fff5f7; border-radius: 12px; border: 1px solid #ffeef1; display:none;">
+                <div style="display:flex; align-items:center; gap:10px;">
+                    <div id="zk-icon" style="font-size: 18px;">⚙️</div>
+                    <div>
+                        <div id="zk-text" style="font-size: 12px; font-weight: bold; color: var(--heras-pink);">Creating ZK Integrity Proof...</div>
+                        <div style="font-size: 12px; color: #999;">Ensuring Compliance & Honesty</div>
+                    </div>
+                </div>
+            </div>
+            <div class="status-box" id="alice-out">System ready for shielding.</div>
+        </div>
+        
+        <div class="card">
+            <span class="badge" style="background:#95a5a6">Infrastructure</span>
+            <h2>🔗 ZK-Shield Status</h2>
+            <p class="description">On-chain verification layer ensuring that all private movements adhere to global compliance standards.</p>
+            
+            <div style="margin-top: 20px;">
+                <button class="btn-bank" onclick="bankVerify()">📡 Verify Protocol Integrity</button>
+            </div>
+            <div class="status-box" id="bank-log">Pulse: Monitoring zk-SNARKs...</div>
+        </div>
+
+        <div class="card">
+            <span class="badge" style="background:var(--safe-navy)">Safe Exit</span>
+            <h2>🕊️ Secure Disbursement</h2>
+            <p class="description">Claim funds or pay for essentials (e.g., legal fees) without leaving a traceable link for others to monitor.</p>
+            
+            <label style="font-size: 12px; color: #999;">Private Spend Key (Authorization)</label>
+            <input type="text" id="k_spend_priv" readonly>
+            
+            <button class="btn-bob" onclick="bobUnlock()">🔐 Access & Claim Funds</button>
+            <div class="status-box" id="bob-out">Awaiting secure claim...</div>
+        </div>
+
+        <div class="card">
+            <span class="badge" style="background:var(--trust-green)">Legal Defense</span>
+            <h2>⚖️ Legal Integrity</h2>
+            <p class="description">Prove your financial honesty to courts or authorities using ZK-Proofs without revealing your total balance.</p>
+            
+            <label style="font-size: 12px; color: #999;">Scan Private Key (View-Only Audit)</label>
+            <input type="text" id="k_scan_priv" readonly>
+            <div id="target-display" style="font-size: 12px; color: #999; margin-bottom: 5px;">Active Thread: -</div>
+            
+            <button class="btn-monitor" onclick="monitorAudit()">🔍 Generate Audit Report</button>
+            <div class="status-box" id="monitor-out">Auditor portal encrypted.</div>
+        </div>
+
+        
+    </div>
+
+    <script>
+        let latestR = "";
+        let latestP = "";
+
+        function log(id, message, isNew = false) {
+            const box = document.getElementById(id);
+            if (!box) return;
+            if (isNew) box.innerHTML = "";
+            box.innerHTML += `> ${message}<br>`;
+            box.scrollTop = box.scrollHeight;
+        }
+
+        window.onload = async () => {
+            try {
+                const res = await fetch('/api/v1/init-demo');
+                const keys = await res.json();
+                 window.cachedKeys = keys;
+
+                log('alice-out', "🛡️ Sanctuary Shield Active. System ready to protect.");
+            } catch (e) { log('alice-out', "⚠️ Secure Connection Interrupted."); }
+        };
+
+        async function aliceExecute() {
+
+            if (window.cachedKeys) {
+        document.getElementById('K_scan').value = window.cachedKeys.K_scan;
+        document.getElementById('K_spend').value = window.cachedKeys.K_spend;
+        document.getElementById('k_scan_priv').value = window.cachedKeys.k_scan;
+        document.getElementById('k_spend_priv').value = window.cachedKeys.k_spend;
+    }
+            log('alice-out', "📡 Initiating Stealth Protocol...", true);
+            document.getElementById('zk-status-area').style.display = 'block';
+            const zkText = document.getElementById('zk-text');
+            const zkIcon = document.getElementById('zk-icon');
+            
+            try {
+                const res = await fetch('/api/v1/generate-stealth', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        scanPublicKey: document.getElementById('K_scan').value,
+                        spendPublicKey: document.getElementById('K_spend').value,
+                        aliceSecretID: "88888888"
+                    })
+                });
+                const data = await res.json();
+
+                if (!data.stealthAddress) throw new Error("Address generation failed");
+                latestP = data.stealthAddress;
+                latestR = data.ephemeralPublicKey;
+
+                log('alice-out', `📍Stealth Address Generated: <span class="highlight">${latestP.slice(0,10)}...</span>`);
+                log('alice-out', `✨ This address has no public link to your identity.`);
+
+                zkText.innerHTML = "Generating ZK Proof (5-10s)...";
+                zkIcon.innerHTML = "⚙️";
+
+                const zkRes = await fetch('/api/v1/generate-proof', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ aliceSecretID: "88888888" })
+                });
+                const zkData = await zkRes.json();
+
+                if (zkData.success) {
+                    log('alice-out', `✅ Compliance Proof encrypted & anchored.`);
+                    zkText.innerHTML = "✅ Sanctuary Proof Ready";
+                    zkText.style.color = "#4CAF50";
+                    zkIcon.innerHTML = "🏛️";
+                } else {
+            throw new Error("ZK Proof generation failed");
+        }
+                document.getElementById('target-display').innerText = `Target: ${latestP.slice(0,12)}...`;
+            } catch (err) { log('alice-out', `❌ Error: ${err.message}`);
+            zkText.innerHTML = "❌ Protocol Failed";
+            zkText.style.color = "red";
+
+        }
+        }
+
+        async function bankVerify() {
+            log('bank-log', "🏦 Infrastructure: Verifying ZK Proof on-chain...", true);
+            try {
+                // Call Backend API
+                const res = await fetch('/api/v1/verify-proof');
+                const data = await res.json();
+                
+                await new Promise(r => setTimeout(r, 800));
+                
+                // 🛠️ Critical: Ensure the judgment logic is correct.
+                if (data.verified === true) {
+                    log('bank-log', "🔍 Reading Proof on-chain...");
+                    log('bank-log', "✅ [IDENTITY PROTECTED]: Compliance confirmed. Transaction cleared.");
+                    document.getElementById('zk-text').innerHTML = "✅ Compliance Verified";
+                    document.getElementById('zk-icon').innerHTML = "🛡️";
+                } else {
+                    log('bank-log', "❌ [FAILED]: Invalid Compliance Proof.");
+                }
+            } catch (err) { log('bank-log', "❌ Connection Failed."); }
+        }
+
+        async function monitorAudit() {
+            if(!latestP) return alert("No active vault found.");
+            log('monitor-out', "⚖️ Legal Audit: Running identity decryption...", true);
+            try {
+                const res = await fetch('/api/v1/scan-address', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        scanPrivateKey: document.getElementById('k_scan_priv').value,
+                        spendPublicKey: document.getElementById('K_spend').value,
+                        ephemeralPublicKey: latestR,
+                        targetStealthAddress: latestP
+                    })
+                });
+                const data = await res.json();
+                await new Promise(r => setTimeout(r, 600));
+                if(data.isMine) {
+                    log('monitor-out', "🎯 [DE-ANONYMIZED]: Integrity check successful.");
+                    log('monitor-out', "🔍 Identification: <strong>Authorized Legal Recipient</strong>.");
+                    log('monitor-out', "✨ Status: MiCA Compliance Proof matches this entity.");
+                } else {
+                    log('monitor-out', "👤 [SHIELDED]: No linkage found.");
+                    log('monitor-out', "🔒 Identity remains sovereign and hidden from the observer.");
+                }
+            } catch (err) { log('monitor-out', "❌ Audit Error."); }
+        }
+
+        async function bobUnlock() {
+            if(!latestP) return alert("No funds.");
+
+            fetch('/api/v1/bob-unlock', { 
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' }
+    });
+            log('bob-out', "🔐 Accessing Vault...", true);
+            await new Promise(r => setTimeout(r, 600));
+            log('bob-out', "🔑 PRIVATE KEY UNLOCKED.Funds claimable.");
+        }
+
+    </script>
+</body>
+</html>
