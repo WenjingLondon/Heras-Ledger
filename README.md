@@ -15,8 +15,8 @@ Privacy-Preserving Compliance (ZKP): Utilizing ZK-SNARKs to prove that a transac
 ### **Phase 1: Functional Demo (Current)**
 * **Cryptography:** * **EIP-5564:** Implementation of Dual-Key Stealth Address (DKSA) for unlinkable transactions.
     * **ZKP:** Circom & SnarkJS (Groth16) for privacy-preserving identity/membership proofs.
-* **Logic:** Node.js (Scanning, spending, and witness generation logic).
-* 
+* **Logic: **Node.js (Scanning, spending, and witness generation logic).
+  
 ### **Phase 2: On-chain Integration (Milestone 2)**
 * **Smart Contracts (Solidity):** * **EIP-5564 Announcer:** Deploying the registry for stealth meta-tags.
     * **On-chain Verifier:** Transitioning the Groth16 verification logic into Solidity smart contracts for decentralized settlement.
