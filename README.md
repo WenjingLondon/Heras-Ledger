@@ -68,3 +68,5 @@ Then open your browser at http://localhost:5000.
 
 📜 License 
 This project is licensed under the MIT License—feel free to use, modify, and build upon this work to foster a more private and equitable Web3.
+
+Note: Current prototype utilizes certain research-grade libraries. Security audits and dependency hardening are prioritized for the next milestone.
