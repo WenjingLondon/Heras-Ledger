@@ -17,9 +17,24 @@ Privacy-Preserving Compliance (ZKP): Utilizing ZK-SNARKs to prove that a transac
     * **ZKP:** Circom & SnarkJS (Groth16) for privacy-preserving identity/membership proofs.
 * **Logic: **Node.js (Scanning, spending, and witness generation logic).
   
-### **Phase 2: On-chain Integration (Milestone 2)**
-* **Smart Contracts (Solidity):** * **EIP-5564 Announcer:** Deploying the registry for stealth meta-tags.
-    * **On-chain Verifier:** Transitioning the Groth16 verification logic into Solidity smart contracts for decentralized settlement.
+### Future Milestones (Grant-Specific)
+**Phase 2: On-chain Integration (Milestone 2)**
+Note: Our roadmap is designed for multi-chain privacy adoption. We are currently seeking support for the following integration phases:
+Phase A: On-chain Verification (Solidity/EVM)
+Deploying EIP-5564 Announcer contracts for decentralized meta-tag registry.
+Transitioning Groth16 verification logic into Solidity Verifier contracts.
+Phase B: Ecosystem Adaptation
+For Polkadot: Transitioning ZK logic into Substrate Pallets for native privacy support.
+For Zcash/Others: Researching Halo 2 circuit optimization for recursive proof efficiency.
+
+🛡️ ** Phase 3: Security Hardening (Production Grade) (Milestone 3)**
+To transition from a functional prototype to a production-ready tool for vulnerable populations, the following security milestones are prioritized:
+Client-Side Security & Integrity: * Transitioning all sensitive computations (Stealth Key derivation and ZKP witness generation) to a strictly local WebAssembly (Wasm) environment to ensure memory safety and zero data leakage.
+Protocol Hardening: * Replacing research-grade dependencies with audited, production-standard cryptographic primitives.
+Implementing a robust CI/CD pipeline with automated vulnerability scanning to maintain a Zero-Alert dependency status.
+Privacy-First UX & Resilience:
+Developing "Stealth-Mode" UI features and emergency data-clearing protocols for users in high-risk physical environments.
+Account Abstraction (EIP-4337) Integration: Leveraging Paymasters to enable gas-less transactions, effectively severing the on-chain link between the funding source and the stealth identity.
       
 🏗️ Core Features 
 Stealth Key Generation: Support for generating scanning and spending keys.
