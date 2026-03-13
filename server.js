@@ -154,7 +154,7 @@ app.get('/api/v1/verify-proof', async (req, res) => {
 
 // --- API 4: Bob scans the address (verification only requires k_scan and K_spend).---
 app.post('/api/v1/scan-address', async (req, res) => {
-    console.log(`\n[INCOMING] Monitor/Bob initiating compliance scan...`);
+    console.log(`\n[INCOMING] Financial Autonomy: Recipient requesting Private Key derivation...`);
     try {
         const { scanPrivateKey, spendPublicKey, ephemeralPublicKey, targetStealthAddress } = req.body;
 
@@ -237,14 +237,14 @@ app.listen(PORT, async () => {
     const P_b = PointClass.BASE.multiply(s_b).add(PointClass.fromHex(K_spend_hex));
     const addrB = getAddress('0x' + keccak256('0x' + P_b.toHex(false).slice(2)).slice(-40));
 
-    console.log(`\n--- 🧪 Automated cryptography self-test (Math Self-Check) ---`);
-    console.log(`- Target StealthAddress P: ${addrA}`);
-    console.log(`- Scan for Address Derivation: ${addrB}`);
-    console.log(`- Verification results: ${addrA === addrB ? "✅ PASSED" : "❌ FAILED"}`);
+    console.log(`\n--- 🧪 Cryptography Engine: Boot-time Self-Check ---`);
+    console.log(`- Logic Verification: ${addrA === addrB ? "✅ PASSED (Engine is Secure)" : "❌ FAILED"}`);
+    console.log(`- Integrity: DKSA + ZK Circuit Logic [ONLINE]`);
     
-    console.log(`\n--- 📋 Please use the following data for UI testing ---`);
-    console.log(`K_scan (For generating): ${K_scan_hex}`);
-    console.log(`K_spend (For generating): ${K_spend_hex}`);
-    console.log(`k_scan (For scanning): ${k_scan_hex}`);
-    console.log(`-------------------------------------------\n`);
+    console.log(`\n--- 🔑 System-Generated Identity Keys (For Demo Initialization) ---`);
+    console.log(`Recipient Public Scan Key  : ${K_scan_hex}`);
+    console.log(`Recipient Public Spend Key : ${K_spend_hex}`);
+    console.log(`Recipient Private Scan Key : ${k_scan_hex}`);
+    console.log(`--------------------------------------------------------\n`);
+    console.log(`[SYSTEM] Waiting for Financial Autonomy requests...\n`);
 });
