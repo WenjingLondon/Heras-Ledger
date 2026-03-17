@@ -20,12 +20,19 @@ Privacy-Preserving Compliance (ZKP): Utilizing ZK-SNARKs to prove that a transac
 ### Future Milestones (Grant-Specific)
 **Phase 2: On-chain Integration (Milestone 2)**
 Note: Our roadmap is designed for multi-chain privacy adoption. We are currently seeking support for the following integration phases:
-Phase A: On-chain Verification (Solidity/EVM)
-Deploying EIP-5564 Announcer contracts for decentralized meta-tag registry.
-Transitioning Groth16 verification logic into Solidity Verifier contracts.
-Phase B: Ecosystem Adaptation
-For Polkadot: Transitioning ZK logic into Substrate Pallets for native privacy support.
-For Zcash/Others: Researching Halo 2 circuit optimization for recursive proof efficiency.
+Track 1: Core Privacy Logic (Zcash/EVM Compatible)
+
+Standardizing DKSA logic for cross-chain privacy. [Seeking Support: Zcash Community Grants]
+
+Track 2: On-chain Verification & Infrastructure
+
+Implementing Solidity Verifiers for EIP-5564. [Seeking Support: Ethereum Foundation]
+
+Transitioning ZK logic into Substrate Pallets. [Seeking Support: W3F]
+
+Track 3: Public Good & User Empowerment
+
+Developing specialized UX for vulnerable groups & female users. [General Public Good]
     
 🏗️ Core Features 
 Stealth Key Generation: Support for generating scanning and spending keys.
