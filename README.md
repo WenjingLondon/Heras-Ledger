@@ -28,8 +28,6 @@ Track 2: On-chain Verification & Infrastructure
 
 Implementing Solidity Verifiers for EIP-5564. [Seeking Support: Ethereum Foundation]
 
-Transitioning ZK logic into Substrate Pallets. [Seeking Support: W3F]
-
 Track 3: Public Good & User Empowerment
 
 Developing specialized UX for vulnerable groups & female users. [General Public Good]
