@@ -92,3 +92,7 @@ Following the latest ecosystem requirements and feedback, we are refining **Hera
 * **Performance Optimization**: Researching parallelized scanning algorithms for **Dual-Key Stealth Addresses (DKSA)** to reduce latency in large-scale privacy transactions.
 * **Circuit Refinement**: Optimizing **ZKP circuits** (Leo/Aleo) to minimize proof generation time and gas consumption.
 * **Modular Architecture**: Decoupling the privacy-preserving logic from the UI to support multi-chain deployment (Aleo, Zcash, etc.).
+
+* ### ⚖️ Regulatory & Compliance (MiCA Readiness)
+* **Privacy vs. Compliance**: Implementing "View Key" logic to allow voluntary disclosure for audit purposes without compromising the user's permanent financial sovereignty.
+* **Anti-Front-Running**: Researching encrypted mempool interactions to ensure transaction fairness in privacy-focused payment flows.
