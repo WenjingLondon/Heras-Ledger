@@ -81,3 +81,14 @@ Then open your browser at http://localhost:5000.
 This project is licensed under the MIT License—feel free to use, modify, and build upon this work to foster a more private and equitable Web3.
 
 Note: Current prototype utilizes certain research-grade libraries. Security audits and dependency hardening are prioritized for the next milestone.
+
+****
+---
+## 🚀 Update: March 2026 - Strategic Roadmap & Compliance
+
+Following the latest ecosystem requirements and feedback, we are refining **Hera’s Ledger** to bridge the gap between Proof-of-Concept and production-ready privacy protocols.
+
+### 🛠️ Current Development Focus
+* **Performance Optimization**: Researching parallelized scanning algorithms for **Dual-Key Stealth Addresses (DKSA)** to reduce latency in large-scale privacy transactions.
+* **Circuit Refinement**: Optimizing **ZKP circuits** (Leo/Aleo) to minimize proof generation time and gas consumption.
+* **Modular Architecture**: Decoupling the privacy-preserving logic from the UI to support multi-chain deployment (Aleo, Zcash, etc.).
